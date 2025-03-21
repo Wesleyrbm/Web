@@ -1,53 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
 </head>
-<body>  
+<body>
+
     <header>
         <nav>
             <ul>
-                <li><a href="inicio">inicio</a></li>
-                <li><a href="sobre">sobre</a></li>
-                <li><a href="projetos">projetos</a></li>
-                <li><a href="contato">contato</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
-    <section id="inicio">
-        <h1>Seja bem vindo</h1>
-        <p>Este é o site da empresa de desenvolvimento de software</p>
-    </section>
 
-    <section id="sobre">
-        <h1>Sobre</h1>
-        <p>Este é o site da empresa de desenvolvimento de software!!!!!!!!!!!!!</p>
-    </section>
-
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <div class="carrossel">
-            <button id="prev" class="carrossel-btn">&#10094;</button>
-            <div class="imagens">
-                <img src="/img/R.jpg" alt="Projeto 1" class="carrossel-img">
-                <img src="/img/20220828_155546.jpg" alt="Projeto 2" class="carrossel-img">
-                <img src="/img/Screenshot_20230409_235559_One UI Home.jpg" alt="Projeto 3" class="carrossel-img">
+    <main class="container">
+        <section id="inicio" class="inicio">
+            <div class="conteudo">
+                <div class="texto">
+                    <h1>Wesley</h1>
+                    <h2>Olá, seja bem-vindo</h2>
+                    <p>Meu nome é Wesley, tenho 22 anos, faço o curso de Sistemas de Informação e trabalho
+                        como suporte técnico em uma empresa de tecnologia. Estou sempre em busca de novos conhecimentos
+                        e desafios.
+                    </p>
+                </div>
+                <img src="/img/FotoPerfil.jpeg" alt="Foto de perfil" class="foto-perfil">
             </div>
-            <button id="next" class="carrossel-btn">&#10095;</button>
-        </div>
-    </section>
+        </section>
+        
 
+        <section id="sobre">
+            <h1>Sobre</h1>
+            <p>Financeiro
+                dinheiro
+                sql
+                banco de dados
+            </p>
+        </section>
 
-    <section id="contato">
-        <h1>Contato</h1>
-        <p>Este é o site da empresa de desenvolvimento de software</p>
-    </section>
-    
-    
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="carrossel">
+                <button id="prev" class="carrossel-btn">&#10094;</button>
+                <div class="imagens">
+                    <img src="/img/R.jpg" alt="Projeto 1" class="carrossel-img">
+                    <img src="/img/20220828_155546.jpg" alt="Projeto 2" class="carrossel-img">
+                    <img src="/img/Screenshot_20230409_235559_One UI Home.jpg" alt="Projeto 3" class="carrossel-img">
+                </div>
+                <button id="next" class="carrossel-btn">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <form id="form-contato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" required></textarea>
+        
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="mensagem-erro" class="erro"></p>
+            <p id="mensagem-sucesso" class="sucesso"></p>
+        </section>
+        
+    </main>
+
 </body>
 </html>

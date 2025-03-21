@@ -1,31 +1,39 @@
 /* Reset básico */
-body, h1, h2, h3, p, ul, li {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo global */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     text-align: center;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Navegação */
-header nav ul {
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #007BFF;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    background: #007BFF;
-    padding: 15px 0;
-}
-
-nav ul li {
     list-style: none;
 }
 
@@ -34,16 +42,17 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     padding: 10px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
 
 /* Seções */
 section {
-    padding: 50px;
-    text-align: center;
+    padding: 80px 20px;
 }
 
 h1, h2 {
@@ -51,36 +60,78 @@ h1, h2 {
     color: #444;
 }
 
+.inicio {
+    padding: 50px;
+    background: url('../img/bg.jpg') center/cover no-repeat;
+    color: rgb(108, 104, 104);
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.conteudo {
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: space-between; /* Espaço entre os elementos */
+}
+
+.texto {
+    max-width: 60%; /* Limita a largura do texto */
+}
+
+.foto-perfil {
+    max-width: 30%; /* Limita a largura da imagem */
+    border-radius: 50%; /* Torna a imagem circular */
+    margin-left: 20px; /* Espaçamento entre o texto e a imagem */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .conteudo {
+        flex-direction: column-reverse; /* Empilha o texto acima da imagem */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .texto, .foto-perfil {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .foto-perfil {
+        margin-left: 0;
+    }
+}
+
+
 /* Carrossel */
 .carrossel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .imagens {
-    width: 80%;
     display: flex;
-    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
 }
 
 .carrossel-img {
     width: 100%;
-    max-width: 600px;
-    height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Botões do carrossel */
 .carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     font-size: 24px;
     cursor: pointer;
-    position: absolute;
 }
 
 #prev {
@@ -89,4 +140,44 @@ h1, h2 {
 
 #next {
     right: 10px;
+}
+
+/* Formulário de contato */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.erro {
+    color: red;
+    font-weight: bold;
+}
+
+.sucesso {
+    color: green;
+    font-weight: bold;
 }
