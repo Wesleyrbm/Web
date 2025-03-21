@@ -14,34 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Carrossel de imagens
-    const imagens = document.querySelector(".imagens");
-    const totalImagens = document.querySelectorAll(".carrossel-img").length;
-    let indexAtual = 0;
-
-    function mostrarImagem(index) {
-        imagens.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    document.getElementById("prev").addEventListener("click", function () {
-        indexAtual = (indexAtual === 0) ? totalImagens - 1 : indexAtual - 1;
-        mostrarImagem(indexAtual);
-    });
-
-    document.getElementById("next").addEventListener("click", function () {
-        indexAtual = (indexAtual === totalImagens - 1) ? 0 : indexAtual + 1;
-        mostrarImagem(indexAtual);
-    });
-
-    mostrarImagem(indexAtual);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
     const imagens = document.querySelectorAll(".carrossel-img");
     const descricao = document.getElementById("descricao");
     const btnPrev = document.getElementById("prev");
     const btnNext = document.getElementById("next");
 
     let indiceAtual = 0;
+    const totalImagens = imagens.length;
 
     const descricoes = [
         `HTML, CSS e JavaScript
@@ -53,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `Banco de Dados
         Projeto, modelagem e otimização de consultas SQL para sistemas escaláveis.`
     ];
-    
 
     function atualizarCarrossel() {
         const larguraImagem = imagens[0].clientWidth;
@@ -62,44 +40,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btnNext.addEventListener("click", () => {
-        indiceAtual = (indiceAtual + 1) % imagens.length;
+        indiceAtual = (indiceAtual + 1) % totalImagens;
         atualizarCarrossel();
     });
 
     btnPrev.addEventListener("click", () => {
-        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+        indiceAtual = (indiceAtual - 1 + totalImagens) % totalImagens;
         atualizarCarrossel();
     });
 
     atualizarCarrossel();
-});
 
+    // Formulário de contato
+    document.getElementById("form-contato").addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita o envio do formulário se houver erro
 
-document.getElementById("form-contato").addEventListener("submit", function (e) {
-    e.preventDefault(); // Evita o envio do formulário se houver erro
+        const nome = document.getElementById("nome").value.trim();
+        const telefone = document.getElementById("telefone").value.trim(); // Agora a variável 'telefone' está definida
+        const email = document.getElementById("email").value.trim();
+        const mensagem = document.getElementById("mensagem").value.trim();
+        const mensagemErro = document.getElementById("mensagem-erro");
+        const mensagemSucesso = document.getElementById("mensagem-sucesso");
 
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mensagem = document.getElementById("mensagem").value.trim();
-    const mensagemErro = document.getElementById("mensagem-erro");
-    const mensagemSucesso = document.getElementById("mensagem-sucesso");
+        mensagemErro.textContent = "";
+        mensagemSucesso.textContent = "";
 
-    mensagemErro.textContent = "";
-    mensagemSucesso.textContent = "";
+        if (nome === "" || telefone === "" || email === "" || mensagem === "") {
+            mensagemErro.textContent = "Preencha todos os campos!";
+            return;
+        }
 
-    if (nome === "" || email === "" || mensagem === "") {
-        mensagemErro.textContent = "Preencha todos os campos!";
-        return;
-    }
+        // Verificação de e-mail com expressão regular
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            mensagemErro.textContent = "Digite um e-mail válido!";
+            return;
+        }
 
-    // Verificação de e-mail com expressão regular
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        mensagemErro.textContent = "Digite um e-mail válido!";
-        return;
-    }
-
-    // Se tudo estiver correto, exibe mensagem de sucesso
-    mensagemSucesso.textContent = "Mensagem enviada com sucesso!";
-    document.getElementById("form-contato").reset(); // Limpa os campos
+        // Se tudo estiver correto, exibe mensagem de sucesso
+        mensagemSucesso.textContent = "Mensagem enviada com sucesso!";
+        document.getElementById("form-contato").reset(); // Limpa os campos
+    });
 });
