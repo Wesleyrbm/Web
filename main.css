@@ -5,7 +5,7 @@ body, h1, h2, h3, p, ul, li {
     box-sizing: border-box;
 }
 
-/* Estilo para o corpo */
+/* Estilo global */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -13,53 +13,80 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-/* Estilo para cabeçalhos */
-h1, h2, h3 {
-    margin-bottom: 10px;
-    color: #444;
-}
-
-/* Estilo para links */
-a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para listas */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 5px;
-}
-
-/* Exemplo de classe */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Exemplo de botão */
-.button {
-    display: inline-block;
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     text-align: center;
 }
 
-.button:hover {
-    background-color: #0056b3;
+/* Navegação */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #007BFF;
+    padding: 15px 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seções */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Carrossel */
+.carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.imagens {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.carrossel-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
 }
