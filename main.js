@@ -39,15 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
         descricao.textContent = descricoes[indiceAtual];
     }
 
-    btnNext.addEventListener("click", () => {
-        indiceAtual = (indiceAtual + 1) % totalImagens;
+    // Função de navegação do carrossel
+    function moveCarrossel(direction) {
+        indiceAtual = (indiceAtual + direction + totalImagens) % totalImagens;
         atualizarCarrossel();
-    });
+    }
 
-    btnPrev.addEventListener("click", () => {
-        indiceAtual = (indiceAtual - 1 + totalImagens) % totalImagens;
-        atualizarCarrossel();
-    });
+    btnNext.addEventListener("click", () => moveCarrossel(1));
+    btnPrev.addEventListener("click", () => moveCarrossel(-1));
 
     atualizarCarrossel();
 
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault(); // Evita o envio do formulário se houver erro
 
         const nome = document.getElementById("nome").value.trim();
-        const telefone = document.getElementById("telefone").value.trim(); // Agora a variável 'telefone' está definida
+        const telefone = document.getElementById("telefone").value.trim();
         const email = document.getElementById("email").value.trim();
         const mensagem = document.getElementById("mensagem").value.trim();
         const mensagemErro = document.getElementById("mensagem-erro");
@@ -65,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mensagemErro.textContent = "";
         mensagemSucesso.textContent = "";
 
+        // Verificação de campos vazios
         if (nome === "" || telefone === "" || email === "" || mensagem === "") {
             mensagemErro.textContent = "Preencha todos os campos!";
             return;

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de Wesley, desenvolvedor e entusiasta da tecnologia. Veja projetos e entre em contato.">
     <title>Portfólio - Wesley</title>
     <link rel="stylesheet" href="main.css">
     <script defer src="main.js"></script>
@@ -44,23 +45,22 @@
         <section id="projetos">
             <h2>Projetos</h2>
             <div class="carrossel">
-                <button id="prev" class="carrossel-btn">&#10094;</button>
+                <button id="prev" class="carrossel-btn" aria-label="Imagem anterior">&#10094;</button>
                 <div class="imagens">
-                    <img src="img/P1.jpg" alt="P1" class="carrossel-img">
-                    <img src="img/P2.jpg" alt="P2" class="carrossel-img">
-                    <img src="img/P3.jpg" alt="P3" class="carrossel-img">
+                    <img src="img/P1.jpg" alt="Projeto 1" class="carrossel-img">
+                    <img src="img/P2.jpg" alt="Projeto 2" class="carrossel-img">
+                    <img src="img/P3.jpg" alt="Projeto 3" class="carrossel-img">
                 </div>
-                <button id="next" class="carrossel-btn">&#10095;</button>
+                <button id="next" class="carrossel-btn" aria-label="Próxima imagem">&#10095;</button>
             </div>
             <p id="descricao">Descrição do Projeto 1</p>
         </section>
         
-
         <section id="contato">
             <h2>Contato</h2>
         
             <!-- Formulário de Contato -->
-            <form id="form-contato">
+            <form id="form-contato" aria-labelledby="contato">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
         
@@ -81,10 +81,10 @@
         
             <!-- Links de Redes Sociais (WhatsApp e GitHub) -->
             <div class="social-links">
-                <a href="https://wa.me/5566984584380" target="_blank" title="WhatsApp">
+                <a href="https://wa.me/5566984584380" target="_blank" title="WhatsApp" aria-label="WhatsApp">
                     <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon">
                 </a>
-                <a href="https://github.com/Wesleyrbm" target="_blank" title="GitHub">
+                <a href="https://github.com/Wesleyrbm" target="_blank" title="GitHub" aria-label="GitHub">
                     <img src="img/github.png" alt="GitHub" class="social-icon">
                 </a>
             </div>
