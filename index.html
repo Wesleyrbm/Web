@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web</title>
+    <title>Portfólio - Wesley</title>
     <link rel="stylesheet" href="main.css">
     <script defer src="main.js"></script>
 </head>
@@ -24,25 +24,21 @@
         <section id="inicio" class="inicio">
             <div class="conteudo">
                 <div class="texto">
-                    <h1>Wesley</h1>
-                    <h2>Olá, seja bem-vindo</h2>
-                    <p>Meu nome é Wesley, tenho 22 anos, faço o curso de Sistemas de Informação e trabalho
-                        como suporte técnico em uma empresa de tecnologia. Estou sempre em busca de novos conhecimentos
-                        e desafios.
-                    </p>
+                    <h1>Bem-vindo ao meu portfólio</h1>
+                    <h2>Olá, sou Wesley, desenvolvedor e entusiasta da tecnologia</h2>
                 </div>
-                <img src="/img/FotoPerfil.jpeg" alt="Foto de perfil" class="foto-perfil">
+                <img src="img/FotoPerfil.jpg" alt="Foto de Wesley" class="foto-perfil">
             </div>
         </section>
-        
 
-        <section id="sobre">
-            <h1>Sobre</h1>
-            <p>Financeiro
-                dinheiro
-                sql
-                banco de dados
-            </p>
+        <section id="sobre" class="sobre">
+            <img src="img/FotoSobre.jpeg" alt="Imagem sobre mim" class="foto-sobre">
+            <div class="texto">
+                <h1>Sobre</h1>
+                <p>Meu nome é Wesley, tenho 22 anos, sou estudante de Sistemas de Informação e trabalho 
+                   como suporte técnico em uma empresa de tecnologia. Estou sempre buscando novos desafios 
+                   e aprimorando minhas habilidades em programação e desenvolvimento de sistemas.</p>
+            </div>
         </section>
 
         <section id="projetos">
@@ -50,15 +46,17 @@
             <div class="carrossel">
                 <button id="prev" class="carrossel-btn">&#10094;</button>
                 <div class="imagens">
-                    <img src="/img/R.jpg" alt="Projeto 1" class="carrossel-img">
-                    <img src="/img/20220828_155546.jpg" alt="Projeto 2" class="carrossel-img">
-                    <img src="/img/Screenshot_20230409_235559_One UI Home.jpg" alt="Projeto 3" class="carrossel-img">
+                    <img src="img/P1.jpg" alt="P1" class="carrossel-img">
+                    <img src="img/P2.jpg" alt="P2" class="carrossel-img">
+                    <img src="img/P3.jpg" alt="P3" class="carrossel-img">
                 </div>
                 <button id="next" class="carrossel-btn">&#10095;</button>
             </div>
+            <p id="descricao">Descrição do Projeto 1</p>
         </section>
+        
 
-        <section id="contato" class="section">
+        <section id="contato">
             <h2>Contato</h2>
             <form id="form-contato">
                 <label for="nome">Nome:</label>
@@ -75,7 +73,6 @@
             <p id="mensagem-erro" class="erro"></p>
             <p id="mensagem-sucesso" class="sucesso"></p>
         </section>
-        
     </main>
 
 </body>

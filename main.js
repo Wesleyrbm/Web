@@ -35,6 +35,46 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarImagem(indexAtual);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const imagens = document.querySelectorAll(".carrossel-img");
+    const descricao = document.getElementById("descricao");
+    const btnPrev = document.getElementById("prev");
+    const btnNext = document.getElementById("next");
+
+    let indiceAtual = 0;
+
+    const descricoes = [
+        `HTML, CSS e JavaScript
+        Desenvolvimento de sites responsivos e dinâmicos com animações e interatividade.`,
+        
+        `Programação em C
+        Foco em estruturas de dados, gerenciamento de memória e algoritmos eficientes.`,
+        
+        `Banco de Dados
+        Projeto, modelagem e otimização de consultas SQL para sistemas escaláveis.`
+    ];
+    
+
+    function atualizarCarrossel() {
+        const larguraImagem = imagens[0].clientWidth;
+        document.querySelector(".imagens").style.transform = `translateX(-${indiceAtual * larguraImagem}px)`;
+        descricao.textContent = descricoes[indiceAtual];
+    }
+
+    btnNext.addEventListener("click", () => {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        atualizarCarrossel();
+    });
+
+    btnPrev.addEventListener("click", () => {
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+        atualizarCarrossel();
+    });
+
+    atualizarCarrossel();
+});
+
+
 document.getElementById("form-contato").addEventListener("submit", function (e) {
     e.preventDefault(); // Evita o envio do formulário se houver erro
 
