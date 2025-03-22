@@ -71,7 +71,7 @@ h1, h2 {
 /* Início */
 .inicio {
     padding: 50px;
-    background: url('img/bg.jpg') center/cover no-repeat;
+    /*background: url('img/FotoFundo.jpg') center/cover no-repeat;*/
     color: #fff;
     text-align: left;
 }

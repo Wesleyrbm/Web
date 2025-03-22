@@ -24,19 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const descricoes = [
         `HTML, CSS e JavaScript
-        Desenvolvimento de sites responsivos e dinâmicos com animações e interatividade.`,
+        \nEstou começando a me aventura no mundo do HMTL, CSS e JavaScript, é o mundo cheio de 
+        possibilidade. Não tenho ainda um projeto de fato, porém pretendo dar seguimento neste meu 
+        portifólio afim de hospedar ele um site.`,
         
         `Programação em C
-        Foco em estruturas de dados, gerenciamento de memória e algoritmos eficientes.`,
+        \nA linguagem de programação que eu tenho mias afinidade, é a linguagem que eu mais utilizei 
+        por causa da faculdade .`,
         
         `Banco de Dados
-        Projeto, modelagem e otimização de consultas SQL para sistemas escaláveis.`
+        \nE aonde eu pretendo seguir carreira, estou atuamente trabalhando como suporte em 
+        um empresa de sofwtare ERP, dessa forma acabo interagindo como esse meio.`
     ];
+    
 
     function atualizarCarrossel() {
         const larguraImagem = imagens[0].clientWidth;
         document.querySelector(".imagens").style.transform = `translateX(-${indiceAtual * larguraImagem}px)`;
-        descricao.textContent = descricoes[indiceAtual];
+        descricao.innerHTML = descricoes[indiceAtual].replace(/\n/g, "<br>");
+
     }
 
     // Função de navegação do carrossel
