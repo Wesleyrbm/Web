@@ -71,7 +71,6 @@ h1, h2 {
 /* Início */
 .inicio {
     padding: 50px;
-    /*background: url('img/FotoFundo.jpg') center/cover no-repeat;*/
     color: #fff;
     text-align: left;
 }
@@ -107,10 +106,6 @@ h1, h2 {
     margin-right: 20px;
 }
 
-.texto-sobre {
-    margin-top: -20px;
-}
-
 /* Carrossel */
 .carrossel {
     position: relative;
@@ -144,6 +139,11 @@ h1, h2 {
     font-size: 24px;
     cursor: pointer;
     transition: background 0.3s ease;
+}
+
+.carrossel-btn:focus {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
 }
 
 #prev {
@@ -183,6 +183,12 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 button {
