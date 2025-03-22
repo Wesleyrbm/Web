@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
     text-align: center;
@@ -43,7 +43,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 18px;
     padding: 12px 20px;
@@ -74,7 +74,7 @@ h1, h2 {
 /* Início */
 .inicio {
     padding: 50px;
-    color: #fff;
+    color: #ffffff;
     text-align: left;
 }
 
@@ -100,7 +100,7 @@ h1, h2 {
     align-items: center;
     justify-content: space-between;
     padding: 50px;
-    background: #f9f9f9;
+    background: #ffffff;
 }
 
 .foto-sobre {
