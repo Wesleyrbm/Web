@@ -24,24 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalImagens = imagens.length;
 
     const descricoes = [
-        `HTML, CSS e JavaScript
-        \nEstou começando a me aventurar no mundo do HTML, CSS e JavaScript. É um mundo cheio de 
-        possibilidades! Ainda não tenho um projeto finalizado, mas pretendo seguir desenvolvendo este 
-        portfólio e hospedá-lo online.`,
-        
-        `Programação em C
-        \nA linguagem de programação com a qual tenho mais afinidade. Foi a mais utilizada 
-        durante a faculdade, por isso tenho bastante experiência com ela.`,
-        
-        `Banco de Dados
-        \nÉ a área na qual pretendo seguir carreira. Atualmente, trabalho como suporte 
-        em uma empresa de software ERP, o que me permite interagir bastante com bancos de dados.`
+        `HTML, CSS e JavaScript<br>Estou começando a me aventurar no mundo do HTML, CSS e JavaScript. É um mundo cheio de possibilidades! Ainda não tenho um projeto finalizado, mas pretendo seguir desenvolvendo este portfólio e hospedá-lo online.`,
+        `Programação em C<br>A linguagem de programação com a qual tenho mais afinidade. Foi a mais utilizada durante a faculdade, por isso tenho bastante experiência com ela.`,
+        `Banco de Dados<br>É a área na qual pretendo seguir carreira. Atualmente, trabalho como suporte em uma empresa de software ERP, o que me permite interagir bastante com bancos de dados.`
     ];
 
     function atualizarCarrossel() {
         const larguraImagem = imagens[0].clientWidth;
+        carrosselContainer.style.transition = "transform 0.5s ease-in-out";
         carrosselContainer.style.transform = `translateX(-${indiceAtual * larguraImagem}px)`;
-        descricao.innerHTML = descricoes[indiceAtual].replace(/\n/g, "<br>");
+        descricao.innerHTML = descricoes[indiceAtual];
     }
 
     // Função de navegação do carrossel
@@ -62,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.key === "Enter" || e.key === " ") moveCarrossel(-1);
     });
 
+    // Ajusta o carrossel quando a janela for redimensionada
+    window.addEventListener("resize", atualizarCarrossel);
+
     atualizarCarrossel();
 
     // Formulário de contato
@@ -74,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mensagemSucesso = document.getElementById("mensagem-sucesso");
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Evita o envio do formulário se houver erro
+        e.preventDefault(); // Evita o envio do formulário
 
         mensagemErro.textContent = "";
         mensagemSucesso.textContent = "";
